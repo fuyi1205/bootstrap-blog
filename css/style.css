@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+}
+
+.glyphicon{
+    font-size: 1.5em;
+}
+
+#header{
+    position: relative;
+    height: 5em;
+    padding: 0;
+    background: rgb(0,191,255);
+}
+
+#header-buttons{
+    display: table;
+    position: absolute;
+    left: 0;
+    height: 5em;
+    padding: 0;
+    text-align: center;
+}
+
+#header-buttons span{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+#header-buttons span:nth-child(1){
+    left: 1em
+}
+
+#header-buttons span:nth-child(2){
+    left: 2em;
+}
+
+#header-buttons span:nth-child(3){
+    left: 3.3em;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+#header h1{
+    margin: 0;
+    line-height: 2.5em;
+    font-size: 2em;
+    font-family: Calibri, sans-serif;
+    text-align: center;
+}
+
+.glyphicon-off, .glyphicon-home, .aside .glyphicon-music, .aside .glyphicon-stop, .aside .glyphicon-play, .aside .glyphicon-pause{
+    position: relative;
+    transition: opacity 0.5s;
+    cursor: pointer;
+    color: #000000;
+    vertical-align: baseline;
+}
+
+.glyphicon-off:hover, .glyphicon-home:hover, .aside .glyphicon-stop:hover, .aside .glyphicon-play:hover, .aside .glyphicon-pause:hover{
+    opacity: 0.3;
+}
+
+.header .explain{
+    display: none;
+    margin-left: 0.5em;
+    vertical-align: top;
+    font-size: 1.2em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+}
+
+footer{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    font-family: 'Microsoft YaHei',sans-serif;
+    text-align: center;
+}
+
+footer span{
+    font-weight: bold;
+}
+
+.aside{
+    background: rgb(0,191,255);
+    text-align: center;
+    padding: 0;
+    border-right:0.2em solid #ffffff;
+    border-top: 0.2em solid #ffffff;
+}
+
+.aside h2{
+    font-size: 1.3em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1em;
+}
+
+.aside ul{
+    list-style: none;
+}
+
+.aside .aside-li{
+    margin: 2em 0;
+}
+
+.aside .glyphicon-user, .glyphicon-phone, .glyphicon-envelope{
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.aside img.aside-visible{
+    width: 6.5em;
+    height: 5.5em;
+}
+
+.aside ul li .aside-visible{
+    display: none;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    color: #000000;
+    text-decoration: none;
+    padding-left: 0.5em;
+}
+
+.aside #bgm{
+    border-top: 0.2em solid #ffffff;
+    padding: 1em;
+}
+
+.aside #bgm span:first-child{
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.aside #bgm p{
+    font-family: 'Microsoft JhengHei',sans-serif;
+}
+
+.aside #bgm-sum{
+    width: 80%;
+    height: 0.25em;
+    background: #ffffff;
+    position: relative;
+    margin: 1em auto;
+}
+
+.aside #bgm-played{
+    position: absolute;
+    left: 0;
+    top: -0.125em;
+    width: 0.5em;
+    height: 0.5em;
+    background: #000000;
+}
+
+.main{
+    padding: 0;
+    border-top: 0.2em solid #ffffff;
+}
+
+.main .row{
+    padding: 0 15px;
+}
+
+.main>.row>div{
+    padding: 0;
+    border: 0;
+    height: 3em;
+}
+
+.main ul.menu1{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: rgb(0,191,255);
+    color: #000000;
+    transition: background 1s;
+    cursor: pointer;
+    list-style: none;
+    z-index: 999;
+}
+
+.main ul.menu1:hover{
+    background: rgba(0,191,255,0.3);
+}
+
+.main>.row>div:nth-child(1), .main>.row>div:nth-child(2){
+    border-right:0.2em solid #ffffff;
+}
+
+.main li.menu-title{
+    font-size: 1.5em;
+    line-height: 2em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    color: #000000;
+}
+
+.main li.menu-title a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.main li.menu2{
+    display: none;
+    line-height: 2em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    border-top: 0.2em solid #ffffff;
+}
+
+.main li.menu2 a{
+    line-height: 2em;
+    font-family: 'Microsoft JhengHei', sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+
+#blog-search{
+    padding: 1.5em;
+    text-align: center;
+    border-bottom: 0.2em solid #ffffff;
+    background: rgba(0,191,255,0.5);
+}
+
+#blog-search input{
+    border-radius: 0.2em;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+
+#blog-search span{
+    margin-left: 1em;
+    font-family: 'Microsoft YaHei', sans-serif;
+    cursor: pointer;
+}
+
+.main .blog>h2, .main .blog>p{
+    font-size: 1.5em;
+    font-weight: normal;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    text-align: center;
+}
+
+.main .blog>p{
+    font-family: Calibri, sans-serif;
+    text-align: left;
+    text-indent: 0.5em;
+}
+
+.main .article-ul{
+    list-style: none;
+}
+
+
+.main .article-ul .article-li{
+    background: rgba(0,191,255,0.3);
+    border-bottom: 0.2em solid #ffffff;
+    transition: background 1s;
+    padding: 0.2em;
+}
+
+
+.main .article-ul .article-li:hover{
+    background: rgb(0,191,255);
+}
+
+.main .article-ul .article-li .border{
+    overflow: hidden;
+}
+
+.main .blog span.article-date, .main .blog .article-ul .article-li a{
+    font-size: 1.5em;
+    font-family: 'Microsoft JhengHei',sans-serif;
+    margin-left: 0.5em;
+}
+
+.main .blog .article-ul .article-li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: text-shadow 0.2s;
+}
+
+.main .blog .article-ul .article-li a:hover{
+    text-shadow: 5px 5px 5px #000000;
+}
+
+div.con-content p, div.con-content h3{
+    font-size: 1em;
+    font-family: "Microsoft YaHei",sans-serif;
+    margin: 0.5em 1em;
+    line-height: 2em;
+}
+
+div.con-content p{
+    text-indent: 2em;
+}
+
+div.con-content pre{
+    background: rgba(0,191,255,0.3);
+    border-radius: 2em;
+}
+
+div.body-content{
+    border-top: 0.2em solid #ffffff;
+}
+
+div#lb-container{
+    position: relative;
+    overflow: hidden;
+    display: table;
+}
+
+div#lb{
+    width: 700%;
+    position: relative;
+    left: -100%;
+}
+
+div#lb .lb-img{
+    width: calc(100% / 7);
+    float: left;
+}
+
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    color: #000000;
+    transition: opacity 1s;
+    font-size: 2em;
+}
+
+.glyphicon-chevron-left:hover, .glyphicon-chevron-right:hover{
+    opacity: 0.3;
+}
+
+.glyphicon-chevron-left{
+    left: 5em;
+}
+
+.glyphicon-chevron-right{
+    right: 5em;
+}
+
+ul#lb-choose{
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    margin-left: -5em;
+}
+
+ul#lb-choose li{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: rgba(0,0,0,0.3);
+    margin: 0 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+div#falls{
+    overflow: hidden;
+    background: rgba(0,191,255,0.3);
+}
+
+div.falls-col{
+    margin: 0 2em;
+    width: calc((100% - 12em) / 3);
+    float: left;
+    background: rgb(0,191,255);
+    border-radius: 0.5em;
+    padding: 1em 0;
+    text-align: center;
+}
+
+div.falls-col ul li{
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+
+div.falls-col h3{
+    font-size: 1.5em;
+    font-family: Calibri,sans-serif;
+    border-bottom: 0.2em solid #ffffff;
+}
+
+div.falls-col li img:first-child{
+    display: block;
+    margin: 1em auto;
+    cursor: pointer;
+    width: 100%;
+}
+
+div.falls-col li img:nth-child(2){
+    position: absolute;
+    display: none;
+    left: 80%;
+    top: -10%;
+    z-index: 9999;
+    background: rgb(0,191,255);
+    padding: 1em;
+}
+
+div.falls-col:nth-child(2) li img:nth-child(2){
+    left: 60%;
+}
+
+div.falls-col:nth-child(3) li img:nth-child(2){
+    left: -180%;
+}
+
+div.falls-col li span{
+    font-size: 1.2em;
+    font-family: "Microsoft YaHei", sans-serif;
+    border-bottom: 0.2em solid #ffffff;
+}

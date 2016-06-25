@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog of Mr.Fu</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <div class="container-fluid">        <div class="row" id="header">
+            <div id="header-buttons">
+                <span class="glyphicon glyphicon-home"></span>
+                <span class="glyphicon glyphicon-off"></span><span class="explain">关闭联系栏</span>
+            </div>
+            <h1>Blog of Fu & A Start for front-end</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-1 aside">
+                <h2>联系作者</h2>
+                <ul class="aside-ul">
+                    <li class="aside-li"><span class="glyphicon glyphicon-phone"></span><span class="aside-visible">13218026007</span></li>
+                    <li class="aside-li"><span class="glyphicon glyphicon-envelope"></span><a href="http://www.126.com" class="aside-visible">fuyi1205@126.com</a></li>
+                    <li class="aside-li"><span class="glyphicon glyphicon-user"></span><img src="../photos/user.png" class="aside-visible"/></li>
+                </ul>
+            </div>
+            <div class="col-lg-11 main">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <ul class="menu1">
+                            <li class="menu-title"><a href="/blog">博文</a></li><li class="menu2 easyPhotos">简略视图</li><li class="menu2 infoPhotos">详细视图</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="menu1">
+                            <li class="menu-title"><a href="/tanks">坦克世界</a></li><li class="menu2"><a href="/tanks/">精英展览</a></li><li class="menu2"><a href="/tanks/iframe.html">战力查询</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="menu1">
+                            <li class="menu-title">纪录经典</li><li class="menu2 easyPhotos">史料</li><li class="menu2 infoPhotos">重生</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="body-content">
+                    <div id="blog-search">
+    <input type="text" placeholder="请输入文章标题关键字" id="search-key"/><span id="search-button" class="btn-success btn-sm disabled">搜索</span><span id="reset-button" class="btn-primary btn-sm active">显示所有博文</span>
+</div>
+<div class="blog">
+    <ul class="article-ul">
+        
+        <li class="article-li">
+            <span class="article-date">30 May 2016</span>
+            <a href="/2016/05/30/getElementPosition.html">用JavaScript获取页面元素的位置（转载）</a>
+            <div class="border"><h2 class="con-title">用JavaScript获取页面元素的位置（转载）</h2>
+<p class="con-date">30 May 2016</p>
+<div class="con-content">
+    <p>制作网页的过程中，你有时候需要知道某个元素在网页上的确切位置。</p>
+    <p>下面的教程总结了Javascript在网页定位方面的相关知识。</p>
+    <h3>一、网页的大小和浏览器窗口的大小</h3>
+    <p>
+        首先，要明确两个基本概念。
+        一张网页的全部面积，就是它的大小。通常情况下，网页的大小由内容和CSS样式表决定。
+        浏览器窗口的大小，则是指在浏览器窗口中看到的那部分网页面积，又叫做viewport（视口）。
+        很显然，如果网页的内容能够在浏览器窗口中全部显示（也就是不出现滚动条），那么网页的大小和浏览器窗口的大小是相等的。如果不能全部显示，则滚动浏览器窗口，可以显示出网页的各个部分。<br/>
+    </p>
+    <h3>二、获取网页的大小</h3>
+    <p>网页上的每个元素，都有clientHeight和clientWidth属性。这两个属性指元素的内容部分再加上padding的所占据的视觉面积，不包括border和滚动条占用的空间。</p>
+    <p><img src="../../../photos/20166121.gif"/></p>
+    <p>（图一 clientHeight和clientWidth属性）</p>
+    <p>因此，document元素的clientHeight和clientWidth属性，就代表了网页的大小。</p>
+    <pre>
+        function getViewport(){
+            if(document.compatMode == "BackCompat"){
+                return {
+                    width: document.body.clientWidth,
+                    height: document.body.clientHeight
+                }
+
+            }else{
+                return {
+                    width: document.documentElement.clientWidth,
+                    height: document.documentElement.clientHeight
+                }
+            }
+        }</pre>
+    <p>上面的getViewport函数就可以返回浏览器窗口的高和宽。使用的时候，有三个地方需要注意：</p>
+    <p>1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。</p>
+    <p>2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。</p>
+    <p>3）clientWidth和clientHeight都是只读属性，不能对它们赋值</p>
+    <h3>三、获取网页大小的另一种方法</h3>
+    <p>
+        网页上的每个元素还有scrollHeight和scrollWidth属性，指包含滚动条在内的该元素的视觉面积。
+        那么，document对象的scrollHeight和scrollWidth属性就是网页的大小，意思就是滚动条滚过的所有长度和宽度。
+        仿照getViewport()函数，可以写出getPagearea()函数。
+    </p>
+    <pre>
+        function getPagearea(){
+            if(document.compatMode == "BackCompat"){
+                return {
+                    width: document.body.scrollWidth,
+                    height: document.body.scrollHeight
+                }
+
+            }else{
+                return {
+                    width: document.documentElement.scrollWidth,
+                    height: document.documentElement.scrollHeight
+                }
+            }
+        }</pre>
+    <p>但是，这个函数有一个问题。如果网页内容能够在浏览器窗口中全部显示，不出现滚动条，那么网页的clientWidth和scrollWidth应该相等。但是实际上，不同浏览器有不同的处理，这两个值未必相等。所以，我们需要取它们之中较大的那个值，因此要对getPagearea()函数进行改写。</p>
+    <pre>
+        function getPagearea(){
+            if(document.compatMode == "BackCompat"){
+                return {
+                    width: Math.max(document.body.clientWidth,document.body.scrollWidth),
+                    height: Math.max(document.body.clientHeight,document.body.scrollHeight)
+                }
+            }else{
+                return {
+                    width: Math.max(document.documentElement.clientWidth,document.documentElement.scrollWidth),
+                    height: Math.max(document.documentElement.clientHeight,document.documentElement.scrollHeight)
+                }
+            }
+        }</pre>
+    <h3>四、获取网页元素的绝对位置</h3>
+    <p>网页元素的绝对位置，指该元素的左上角相对于整张网页左上角的坐标。这个绝对位置要通过计算才能得到。</p>
+    <p>首先，每个元素都有offsetTop和offsetLeft属性，表示该元素的左上角与父容器（offsetParent对象）左上角的距离。所以，只需要将这两个值进行累加，就可以得到该元素的绝对坐标。</p>
+    <p><img src="../../../photos/20166122.gif" alt="图片被妖怪抓走了"></p>
+    <p>（图二 offsetTop和offsetLeft属性）</p>
+    <p>下面两个函数可以用来获取绝对位置的横坐标和纵坐标。</p>
+    <pre>
+        function getElementLeft(element){
+            var actualLeft = element.offsetLeft;
+                current = element.offsetParent;
+            while(current != null){
+                actualLeft += current.offsetLeft;
+                current = current.offserParent;
+            }
+            return actualLeft;
+        }
+
+        function getElementTop(element){
+            var actualTop = element.offsetTop;
+                current = element.offsetParent;
+            while(current != null){
+                actualTop += current.offsetTop;
+                current = current.offserParent;
+            }
+            return actualTop;
+        }</pre>
+    <p>由于在表格和iframe中，offsetParent对象未必等于父容器，所以上面的函数对于表格和iframe中的元素不适用。</p>
+    <h3>五、获取网页元素的相对位置</h3>
+    <p>网页元素的相对位置，指该元素左上角相对于浏览器窗口左上角的坐标。</p>
+    <p>有了绝对位置以后，获得相对位置就很容易了，只要将绝对坐标减去页面的滚动条滚动的距离就可以了。滚动条滚动的垂直距离，是document对象的scrollTop属性；滚动条滚动的水平距离是document对象的scrollLeft属性。</p>
+    <p><img src="../../../photos/20166123.gif"/></p>
+    <p>（图三 scrollTop和scrollLeft属性）</p>
+    <p>对上一节中的两个函数进行相应的改写：</p>
+    <pre>
+        function getElementLeft(element){
+            var actualLeft = element.offsetLeft,
+                current = element.offsetParent;
+            while(current != null){
+                actualLeft += current.offsetLeft;
+                current = current.offsetParent;
+            }
+            if(document.CompatMode == "BackCompact"){
+                var elementScrollLeft = document.body.scrollLeft;
+            }else{
+                var elementScrollLeft = document.documentElement.scrollLeft;
+            }
+            return actualLeft - elementScrollLeft;
+        }
+
+        function getElementTop(element){
+            var actualTop = element.offsetTop,
+                current = element.offsetParent;
+            while(current != null){
+                actualTop += current.offsetTop;
+                current = current.offserParent;
+            }
+            if(document.CompatMode == "BackCompact"){
+                var elementScrollTop = document.body.scrollTop;
+            }else{
+                var elementScrollTop = document.documentElement.scrollTop;
+            }
+            return actualTop - elementScrollTop;
+        }</pre>
+    <p>scrollTop和scrollLeft属性是可以赋值的，并且会立即自动滚动网页到相应位置，因此可以利用它们改变网页元素的相对位置。另外，element.scrollIntoView()方法也有类似作用，可以使网页元素出现在浏览器窗口的左上角。</p>
+    <h3>六、获取元素位置的快速方法</h3>
+    <p>除了上面的函数以外，还有一种快速方法，可以立刻获得网页元素的位置。</p>
+    <p>那就是使用getBoundingClientRect()方法。它返回一个对象，其中包含了left、right、top、bottom四个属性，分别对应了该元素的左上角和右下角相对于浏览器窗口（viewport）左上角的距离。</p>
+    <p>所以，网页元素的相对位置就是</p>
+    <pre>
+        var x = this.getBoundingClientRect().left;
+        var y = this.getBoundingClientRect().top;
+        加上滚动距离，就可以得到绝对位置
+        var x = this.getBoundingClientRect().left + document.documentElement.scrollleft;
+        var y = this.getBoundingClientRect().top + document.documentElement.scrollTop;</pre>
+    <p>目前，IE、Firefox 3.0+、Opera 9.5+都支持该方法，而Firefox 2.x、Safari、Chrome、Konqueror不支持。</p>
+</div></div>
+        </li>
+        
+        <li class="article-li">
+            <span class="article-date">04 May 2016</span>
+            <a href="/2016/05/04/%E5%AD%A6%E4%B9%A0%E9%97%AD%E5%8C%85.html">学习JS中的闭包（转载）</a>
+            <div class="border"><h2 class="con-title">学习JS中的闭包（转载）</h2>
+<p class="con-date">04 May 2016</p>
+<div class="con-content">
+    <p>闭包（closure）是Javascript语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。<br/>
+    下面就是我的学习笔记，对于Javascript初学者应该是很有用的。</p>
+    <h3>一、变量的作用域</h3>
+    <p>要理解闭包，首先必须理解Javascript特殊的变量作用域。</p>
+    <p>变量的作用域无非就是两种：全局变量和局部变量。</p>
+    <p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
+    <pre class="pre">
+        var n=999;
+
+        function f1(){
+            alert(n);
+        }
+
+        f1(); //999</pre>
+    <p>另一方面，在函数外部自然无法读取函数内的局部变量。</p>
+    <pre>
+        function f1(){
+            var n=999;
+        }
+
+        alert(n); //999</pre>
+    <p>这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！</p>
+    <pre>
+        function f1(){
+            n=999;
+        }
+
+        f1();
+
+        alert(n); //999</pre>
+    <h3>二、如何从外部读取局部变量？</h3>
+    <p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。</p>
+    <p>那就是在函数的内部，再定义一个函数。</p>
+    <pre>
+        function f1(){
+            var n=999;
+
+            function f2(){
+                alert(n); //999
+            }
+        }</pre>
+    <p>在上面的代码中，函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。这就是Javascript语言特有的"链式作用域"结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
+    <p>既然f2可以读取f1中的局部变量，那么只要把f2作为返回值，我们不就可以在f1外部读取它的内部变量了吗！</p>
+    <pre>
+        function f1(){
+            var n=999;
+
+            function f2(){
+                alert(n);
+            }
+
+            return f2;
+        }
+
+        var result=f1();
+
+        result(); //999</pre>
+    <h3>三、闭包的概念</h3>
+    <p>上一节代码中的f2函数，就是闭包。</p>
+    <p>各种专业文献上的"闭包"（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数。</p>
+    <p>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。</p>
+    <p>所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
+    <h3>四、闭包的用途</h3>
+    <p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
+    <p>怎么来理解这句话呢？请看下面的代码。</p>
+    <pre>
+        function f1(){
+            var n=999;
+            nAdd=function(){n+=1}; //注意这里实际上定义了一个全局变量
+            function f2(){
+                alert(n);
+            }
+            return f2;
+        }
+        var result=f1();
+        result(); //999
+        nAdd();
+        result(); //1000</pre>
+    <p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
+    <p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
+    <p>这段代码中另一个值得注意的地方，就是"nAdd=function(){n+=1}"这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
+    <h3>五、使用闭包的注意点</h3>
+    <p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+    <p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+</div></div>
+        </li>
+        
+        <li class="article-li">
+            <span class="article-date">02 May 2016</span>
+            <a href="/2016/05/02/T30.html">T30的使用心得</a>
+            <div class="border"><h2 class="con-title">T30的使用心得</h2>
+<p class="con-date">02 May 2016</p>
+<div class="con-content">
+    <h3>一、前言</h3>
+    <p>前言:虽然很久没玩WOT了,但一直有心以自己最喜欢的坦克为主题写一篇攻略.既然是最喜欢的,那当然非T30莫属.作为WOT里最倍受争议的坦克之一,为什么本人在几乎玩过所有类型的顶级坦克后依然选择它?下面将为您一一道来.<p>
+    <h3>二、T30的优缺点</h3>
+    <p>T30的缺点:是的,T30的缺点是非常明显的,也是非常致命的!一直以来被广泛抱怨的无非就是他那脆弱的车身.用不堪一击来形容完全不为过,甚至一台7级中型坦克的火炮都有可能对自己造成一定程度的威胁.更不要说10级HT,9级TD的高穿深炮弹了.</p>
+    <p>T30的优点:毫无疑问,就是那一门155MM的凶猛火炮了.再搭配着能够高速旋转的炮台使他对于任何坦克都能造成毁灭性的打击.同时作为重型坦克那不落下风的机动力,以及比较多的HP值.我想,具备这些,它的那些缺点,用上述的优点来弥补也是绰绰有余了.
+    那么我们作为T30的使用者,到底要如何来尽可能的隐藏自己的缺点,而最大限度的发挥自己的优点呢?</p>
+    <h3>三、T30的战场运用</h3>
+    <p>首先,我们必须熟悉每一个战场的地形.到底哪个位置能为自己脆弱的车身提供最大限度的掩护,同时又能让自己的火力覆盖到对手.这一点,是每一位T30使用者的必修课.但是,这仅仅是入门而已.接下来才是真正需要思考的进阶!
+    开局的30秒倒数,其实并非让我们白白的等待那些未载入的玩家.这个时间有很多事情要做.做什么?战前评估!一目了然的列表可以让我们清晰的制定本场战斗的计划,以及设计好出现变化后的策略.对方有哪些坦克对自己威胁最大,对方的火炮数量以及地图开阔程度这些因素,怎么行动才可以使自己始终保持在最安全的位置?对方的主战坦克将会从哪条路线进攻?如果正面遭遇对手主战坦克,事先制定的既战术中,我必须占据哪个位置才能获得主动权?
+    战斗开始!大部分地图都会有最少两条,多则四条进攻线路.这时候果断根据战术选择最适合自己的进攻路线.这条路线必须具备几个因素.T30不完全适合突前和单兵作战.那么这条路线必须要有一定数量的队友为自己提供火力掩护.同时这条线路必须要有足够多的掩体为自己脆弱的下身提供足够的掩护.事先了解火炮在这张地图上的站位以及他们射击的角度,确保自己不会同时被1台以上的火炮覆盖到.要知道T30那明显的火力优势,足够让它在被点亮后成为所有经验丰富的火炮的首要打击目标!
+    选择好线路后执行,这个时候我们的首要目标是什么?没错!打击并摧毁对手最强大的火力点.这里需要思考的东西同样很多.在一场小规模的阵地战中,如何摧毁对手并保全自己,从而达到推进的目的?要知道地图是相对平衡的,作为本场战斗的主力,我们出现在这个位置,那么很有可能对手的主战坦克也出现在前面的不远处.对手是IS7?是老鼠?感觉到压力了吗?也许是的!但是请你放心!对手无论是什么坦克,在看到一台T30瞄准着自己准备开炮时,他的心理压力绝对不会比我们小!再者,事先我们已经做过战斗前的评估,对手的出现已经是意料之中了,那么,准备开火吧!
+    首先,除非特定的局面,T30绝对不适合去冒着承受对方第一炮或者更多炮的危险,并以此为代价点亮对方.这是愚蠢的.我们是重型火力.只在必要的时候做必要的事情.要知道有输出能力的T30将会是一台凶猛的收割机,而被击毁的T30仅仅是一堆废铁而已.在小规模碰撞中,一般情况下会出现短时间的对峙.一旦有人率先露头,或者开炮.就是我们出击的机会.我想很多有经验的朋友在不倚赖任何插件的情况下是有足够能力从弹道,以及弹速上区别对方的火力的大致口径的.那么,这个时候我们要做的就是,在对方正在装填的时刻,在我方队友吸引他们注意力的时刻,从容的露出头来,精确的击打此时对面最具威胁的坦克.是的!T30装填很慢,我们必须命中!否则队友的努力将被白废!如果目测,或者判断对方还有坦克没有开火,并威胁着自己时,我们可以做一个取舍,是出去承受这一炮去和对手主力换血?还是退而求其次,仅仅在该坦克的覆盖面以外击打相对不那么重要的坦克?我想大家都可以做到既时的判断!
+    在一场战斗中,我们或许应该一直保持对战局不间断的判断与预测,直到我们摧毁对方最后一台坦克或者占领他们的基地.</p>
+    <p>很多人说,T30应该远距离打黑枪.我想对于这个观点,我不能完全赞同.</p>
+    <p>诚然,黑枪战术下的T30确实能够在生存方面得到极大的提升,但是缺点也暴露得很明显.很多打黑枪的位置亦牺牲了自己的火力覆盖面.对方生存率高的坦克看到我们不能覆盖到他时,将为他孕育出能更加肆虐的温床.要知道,我们的精度不如猎虎.我们的威力却很恐怖,远距离小范围威慑?我宁愿牺牲这点可怜的安全系数,让自己占据最有利的地形,彻底遏制对手的推进步伐,并给对手施加巨大的心理压力.除非,除非你想等到对友被逐一歼灭,自己再被多台坦克围攻...
+    我也记得有言论说,T30作为10级重坦却只和704一样,拥有几乎相同的炮.704具备无与伦比的隐蔽能力以及可耻的正面炮盾,而T30剩下的仅仅是脆弱的下身.作为一台10级HT,相比9级TD,为它投入值得吗?也许不值得吧.但是T30拥有10级HT中转速最快的炮台,它几乎可以让我们在任何地形进行火力输出,也可以让任何一台9级MT放弃一切绕圈打你的念头,2000+的HP足够承受任何火炮的打击,以及它坚硬的头部.这一切不值得吗?你来判断!
+    还有些朋友,经常喜欢拿T30,IS7,鼠式进行对比,我觉得这是没有可比性的,大家各自在自己的领域有各自的优势.这一点是显而易见的.但是我依然想强调一点.你的IS7,老鼠或许可以一发击毁一台满血的T54,潘兴,IS3,IS4.但是我们的T30,火力凶猛到可以一炮击毁满血的IS7,一炮打缩推进中的鼠式!像我这样的玩家,对火力的追求是强烈的.我想99%选择T30的朋友也和我一样.为的就是那一门155MM火炮.它一炮带走对手,让对手在残骸中燃烧的快感是无与伦比的!
+    此外,使用T30的朋友,我还想提个建议-----尽最大的可能保证自己的伤害不要溢出.一般情况下那些残血并不具威胁的小车不值得我们出手,我们把它打残就行了,队友负责把它炸飞.我们的目标依然是对方具备战斗力和威慑力的重型火力.要知道一个判断错误,就有可能让对手主战坦克带走我们的一个队友.而T30的装填时间不允许我们浪费炮弹.
+    最后,这个攻略写的或许有些抽象,我不会假装数据帝,我也不会去研究太多的数据.我不会告诉大家对付什么什么坦克时,要打击什么什么位置.那些大家都懂.我只想强调,T30选择目标并开炮要冷静,确保自己的炮弹如同手术刀一样,精确的打击在对手最致命的部位.无论我们在对付一台坦克的微观上,或是整个战局的处理上,都应该如此!</p>
+    <h3>四、结束语</h3>
+    <p>希望此文能为那些正徘徊在是否升级T30路上的朋友,以及对自己T30开始产生怀疑的战友,点燃全新的战斗欲望!记住!被155MMAP弹覆盖着的坦克操纵者,心理压力是巨大的!好好利用这一点,接下来我们要做的,就是杀戮!
+    再补充提倡一下,看了下BBS,发现很多帖子都是在抱怨国服差,外服好.也许吧.但是我相信如果存在这些糟糕的情况,从我们自己做起,将会得到更多的改善.如果您觉得在下写的东西对您有帮助,请回贴给予鼓励.如果您觉得我写的东西不对,也欢迎提出指正.多一些讨论,少一些谩骂与指责.这样说不定毛子老外们,都会在BBS上说我们的服务器好,他们的服务器烂.</p>
+</div></div>
+        </li>
+        
+        <li class="article-li">
+            <span class="article-date">29 Apr 2016</span>
+            <a href="/2016/04/29/T54E1.html">T54E1使用心得</a>
+            <div class="border"><h2 class="con-title">T54E1使用心得</h2>
+<p class="con-date">29 Apr 2016</p>
+<div class="con-content">
+    <h3>一、前言</h3>
+    <p>T54E1作为美国九级中型坦克，特点是火力凶狠，是一台输出能力不亚于同级坦克歼击车的优秀车辆</p>
+    <h3>二、T54E1的优缺点</h3>
+    <P>优点：连发弹夹炮，390的均伤，火力异常凶猛；本身1750的血量，与所有九级车，甚至自己的直系大哥T57对射丝毫不虚，长装填33秒，持续输出能力极强；残局翻盘能力极强</P>
+    <p>缺点：机动一般，火炮精度以及瞄准速度一般，相比单发车辆更需要队友的保护，在战场初期缺乏独立作战能力</p>
+    <h3>三、T54E1的战场运用</h3>
+    <p>首先54虽然是中坦但是的确不适合开局去点灯。第一速度就不够，最快平地在45+左右，远远低于一些快车的速度。而且装弹时间为30秒左右。也就是说你在前冲的路上遭遇敌方车辆的话就是个肉包子完全无还手之力。</p>
+    <p>如果我们不适合点灯的话我们是不是应该去卡点呢?答案是绝对的。虽然这个车的装弹时间稍微长点但是如果是卡点断腿为队友创造战局节点还是不错的。毕竟2秒的间歇装弹就算对面修理包秒修估计第二炮还是要断的。所以开局54就要找地图的卡点位去卡点。</p>
+    <p>在卡完点以后我不太推荐大家继续蹲着和敌方对抗。其原因有三第一54这个车的传深才210左右实际可能还不到，那么在面对敌方主力的正面对抗下就算你有速度但是打不穿也是徒劳。第二作为一辆中坦我最鄙视的就是E-50之类的黑枪流。必须发挥自己的速度优势去最需要你去的位置。第三在国服流星雨的大趋势下54实在经不起火炮两下。所以综合上述我在战局中一般就前1分到2分钟左右会卡点，后面的时间一般在游走。这样不仅可以在一定程度上规避火炮，也可以支援危在旦夕的队友。同时也保证自己的全场伤害输出。</p>
+    <p>有些撸友可能会说最为中坦为什么不提去摸火炮这个事。我想说的是在平时的野战中随着国服玩家的综合素质的提高我很难看到对面不保护火炮直接一波流的局面。(幼儿园除外)就算有个别小车溜进来那也是瞬间就回去找扳手修车了。所以就54这装甲就算你溜进了对面的火炮阵地我估计你也很难囫囵个出来。白白浪费个4连发的输出单位。当然在全局的中期或者尾声大趋势一片大好的情况下也是可以去找找炸B的麻烦的。</p>
+    <p>54在平时的对炮中本人发现正面两个车灯的中间那片异常的诡异(白兔。268都跳过)所以如果遭遇正面对抗建议大家摆正面后左右摇摆车头，增加跳蛋的几率。</p>
+    <p>最后一点在有队友顶炮的情况下千万别凑前面去打。切记!切记!最好我方法是打侧面或者菊花。因为本人就因为绕不到敌方的侧面所以选择打正面弱点而连飞3发的悲剧。</p>
+    <h3>四、结束语</h3>
+    <p>OK。这就是本人在T54E1完全体后的一些打法和心得。希望大家多批评指正。当然在此我不是推荐大家去拿这个货黑枪，毕竟这车不是TD!</p>
+</div></div>
+        </li>
+        
+    </ul>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    <span>©</span><span>2016-宇宙毁灭 傅毅的小站</span>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
+

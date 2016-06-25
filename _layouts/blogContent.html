@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog of Mr.Fu</title>
+    <link rel="shortcut icon" href="../../../favicon.ico"/>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" id="header">
+        <div id="header-buttons">
+            <span class="glyphicon glyphicon-home"></span>
+            <span class="glyphicon glyphicon-off"></span><span class="explain">关闭联系栏</span>
+        </div>
+        <h1>Blog of Fu & A Start for front-end</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 aside">
+            <h2>联系作者</h2>
+            <ul class="aside-ul">
+                <li class="aside-li"><span class="glyphicon glyphicon-phone"></span><span class="aside-visible">13218026007</span></li>
+                <li class="aside-li"><span class="glyphicon glyphicon-envelope"></span><a href="http://www.126.com" class="aside-visible">fuyi1205@126.com</a></li>
+                <li class="aside-li"><span class="glyphicon glyphicon-user"></span><img src="../../../photos/user.png" class="aside-visible"/></li>
+            </ul>
+        </div>
+        <div class="col-lg-11 main">
+            <div class="row">
+                <div class="col-xs-4">
+                    <ul class="menu1">
+                        <li class="menu-title"><a href="/blog">博文</a></li><li class="menu2 easyPhotos">简略视图</li><li class="menu2 infoPhotos">详细视图</li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <ul class="menu1">
+                        <li class="menu-title"><a href="/tanks">坦克世界</a></li><li class="menu2"><a href="/tanks/">精英展览</a></li><li class="menu2"><a href="/tanks/iframe.html">战力查询</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <ul class="menu1">
+                        <li class="menu-title">纪录经典</li><li class="menu2 easyPhotos">史料</li><li class="menu2 infoPhotos">重生</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body-content">
+                <div class="blog">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <span>©</span><span>2016-宇宙毁灭 傅毅的小站</span>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script src="../../../js/index.js"></script>
+</body>
+</html>
+

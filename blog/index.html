@@ -1,0 +1,18 @@
+---
+layout: blogIndex
+title: 博客栏目
+---
+<div id="blog-search">
+    <input type="text" placeholder="请输入文章标题关键字" id="search-key"/><span id="search-button" class="btn-success btn-sm disabled">搜索</span><span id="reset-button" class="btn-primary btn-sm active">显示所有博文</span>
+</div>
+<div class="blog">
+    <ul class="article-ul">
+        {% for post in site.posts %}
+        <li class="article-li">
+            <span class="article-date">{{ post.date | date_to_string }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <div class="border">{{ post.content }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
