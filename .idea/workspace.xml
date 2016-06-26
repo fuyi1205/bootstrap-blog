@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="814ca962-1fb4-41e3-83e6-829855b3d279" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/js/index.js" afterPath="$PROJECT_DIR$/_site/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/blogContent.html" afterPath="$PROJECT_DIR$/_layouts/blogContent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/blogIndex.html" afterPath="$PROJECT_DIR$/_layouts/blogIndex.html" />
     </list>
     <ignored path="jekyll_demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="48" column="202" selection-start-line="48" selection-start-column="202" selection-end-line="48" selection-end-column="202" />
+            <state relative-caret-position="735">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -60,18 +57,18 @@
       <file leaf-file-name="blogContent.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_layouts/blogContent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+            <state relative-caret-position="210">
+              <caret line="40" column="134" selection-start-line="40" selection-start-column="134" selection-end-line="40" selection-end-column="134" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogIndex.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blogIndex.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/blogIndex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state relative-caret-position="7">
+              <caret line="40" column="202" selection-start-line="40" selection-start-column="202" selection-end-line="40" selection-end-column="202" />
               <folding />
             </state>
           </provider>
@@ -145,11 +142,11 @@
         <option value="$PROJECT_DIR$/blog/index.html" />
         <option value="$PROJECT_DIR$/tanks/iframe/index.html" />
         <option value="$PROJECT_DIR$/tanks/iframe.html" />
-        <option value="$PROJECT_DIR$/_layouts/blogContent.html" />
-        <option value="$PROJECT_DIR$/_layouts/blogIndex.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/_layouts/blogContent.html" />
+        <option value="$PROJECT_DIR$/_layouts/blogIndex.html" />
       </list>
     </option>
   </component>
@@ -329,15 +326,15 @@
       <workItem from="1466733159415" duration="13416000" />
       <workItem from="1466840980782" duration="1522000" />
       <workItem from="1466905336648" duration="6396000" />
-      <workItem from="1466914371537" duration="353000" />
+      <workItem from="1466914371537" duration="645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219975000" />
+    <option name="totallyTimeSpent" value="220267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -591,22 +588,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tanks/iframe/index.html" />
-    <entry file="file://$PROJECT_DIR$/_layouts/blogContent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/blogIndex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tanks/iframe.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -643,8 +624,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="48" column="202" selection-start-line="48" selection-start-column="202" selection-end-line="48" selection-end-column="202" />
+        <state relative-caret-position="735">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/blogContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="40" column="134" selection-start-line="40" selection-start-column="134" selection-end-line="40" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/blogIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="40" column="202" selection-start-line="40" selection-start-column="202" selection-end-line="40" selection-end-column="202" />
           <folding />
         </state>
       </provider>
