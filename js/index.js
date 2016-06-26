@@ -2,13 +2,13 @@
 (function(){
     //边栏联系人细节显示
     var showDetail = function () {
-            $(".aside").attr("class","col-lg-2 aside");
-            $(".main").attr("class","col-lg-10 main");
+            $(".aside").attr("class","col-sm-2 aside");
+            $(".main").attr("class","col-sm-10 main");
             $(this).next().show(500);
         },
         hideDetail = function () {
-            $(".aside").attr("class","col-lg-1 aside");
-            $(".main").attr("class","col-lg-11 main");
+            $(".aside").attr("class","col-sm-1 aside");
+            $(".main").attr("class","col-sm-11 main");
             $(".aside-visible").hide();
         };
 
@@ -28,14 +28,14 @@
         var main = $(".main"),
             aside = $(".aside"),
             explain = $(".explain");
-        if((aside.attr("class") == "col-lg-1 aside")){
-            main.attr("class","col-lg-12 main");
-            aside.attr("class","aside");
+        if((aside.attr("class") == "col-sm-1 aside")){
+            main.attr("class","col-sm-12 main");
             aside.hide();
+            aside.attr("class","aside");
             explain.text("打开联系栏");
         }else{
-            main.attr("class","col-lg-11 main");
-            aside.attr("class","col-lg-1 aside");
+            main.attr("class","col-sm-11 main");
+            aside.attr("class","col-sm-1 aside");
             aside.show();
             explain.text("关闭联系栏");
         }
