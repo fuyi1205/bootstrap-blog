@@ -20,7 +20,7 @@
 
     //主页键
     $(".glyphicon-home").click(function (){
-        location.pathname = "/";
+        location.pathname = "/bootstrap-blog/";
     })
 
     //显示、关闭边栏
